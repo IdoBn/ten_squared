@@ -13,8 +13,7 @@ class AuthController < ApplicationController
 	private
 
 	def authenticate_otp
-		@user = User.find_by(phone_number: params[:phone_number])
-		if @user
+		if @user = User.find_by(phone_number: params[:phone_number])
 			return @user.authenticate_otp(params[:otp_code], drift: 120)
 		end
 		false
