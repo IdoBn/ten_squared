@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :users
   match 'auth', to: 'auth#index', via: :post
 
+  resources :conversations do
+    post 'message', on: :collection
+  end
+
+  match 'conversations/message', to: 'conversations#message', via: :post
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

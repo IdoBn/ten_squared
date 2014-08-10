@@ -10,5 +10,6 @@ module Tokenable
       random_token = SecureRandom.urlsafe_base64(nil, false)
       break random_token unless self.class.exists?(auth_token: random_token)
     end
+    self.save
   end
 end
