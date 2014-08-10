@@ -11,6 +11,7 @@ gem 'pg'
 gem 'active_model_otp'
 gem 'twilio-ruby', '~> 3.11'
 
+gem 'pusher'
 
 
 # To use ActiveModel has_secure_password
