@@ -6,6 +6,6 @@ class ConversationsController < ApplicationController
 	end
 
 	def message
-		Message.send(channel: 'test_channel', user: current_user)
+		Message.send(channel: params[:channel], user: current_user)
 	end
 end
